@@ -30,10 +30,10 @@ jobs:
         run: nci
 
       - name: Build
-        run: nr build
+        run: nr build:cli
 
       - name: Lint
-        run: nr lint
+        run: nr biome
 
   test:
     runs-on: ${{ matrix.os }}
