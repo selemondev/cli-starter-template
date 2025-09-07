@@ -1,0 +1,71 @@
+{
+	"name": "cli-starter-template",
+	"version": "0.0.0",
+	"homepage": "https://github.com/selemondev/cli#readme",
+ "repository": {
+    "type": "git",
+    "url": "git+https://github.com/selemondev/cli-starter-template.git"
+  },
+  "bugs": "https://github.com/selemondev/cli-starter-template/issues",
+	"scripts": {
+		"build:cli": "tsdown",
+		"dev:build": "tsdown --watch ./src/index.ts",
+		"dev": "tsx ./src/index.ts",
+		"biome": "biome check --write",
+		"test": "vitest",
+		"coverage": "vitest run --coverage",
+		"generate:release": "pnpx changelogen@latest --release && git push --follow-tags",
+		"generate:major:release": "pnpx changelogen@latest --major && git push --follow-tags",
+		"generate:minor:release": "pnpx changelogen@latest --minor && git push --follow-tags",
+		"generate:patch:release": "pnpx changelogen@latest --patch && git push --follow-tags",
+		"bump:version": "pnpx changelogen@latest --bump",
+		"package:beta": "pnpm build:cli && pnpm publish --tag beta",
+		"package": "pnpm build:package && pnpm publish --access=public"
+	},
+	"bin": {
+		"cli-starter": "./dist/index.mjs"
+	},
+	"keywords": [
+		"cli",
+		"typescript"
+	],
+	"files": [
+		"dist"
+	],
+	"engines": {
+		"node": ">=18.0.0"
+	},
+	"author": "Selemondev",
+	"license": "MIT",
+	"description": "CLI ✨",
+	"devDependencies": {
+		"@biomejs/biome": "2.2.3",
+		"@types/fs-extra": "^11.0.4",
+		"@types/node": "^24.3.1",
+		"@vitest/coverage-v8": "3.2.4",
+		"jiti": "^2.5.1",
+		"tsdown": "^0.14.2",
+		"tsx": "^4.20.5",
+		"typescript": "^5.9.2",
+		"vitest": "^3.2.4"
+	},
+	"dependencies": {
+		"commander": "^14.0.0",
+		"consola": "^3.4.2",
+		"fs-extra": "^11.3.1",
+		"pathe": "^2.0.3",
+		"picocolors": "^1.1.1",
+		"pkg-types": "^2.3.0",
+		"prompts": "^2.4.2"
+	},
+	"main": "./dist/index.js",
+	"module": "./dist/index.mjs",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		".": {
+			"import": "./dist/index.mjs",
+			"require": "./dist/index.js"
+		},
+		"./package.json": "./package.json"
+	}
+}
