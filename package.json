@@ -2,6 +2,7 @@
 	"name": "cli-starter-template",
 	"version": "0.0.0",
 	"homepage": "https://github.com/selemondev/cli#readme",
+	 "packageManager": "pnpm@9.15.9",
  "repository": {
     "type": "git",
     "url": "git+https://github.com/selemondev/cli-starter-template.git"
