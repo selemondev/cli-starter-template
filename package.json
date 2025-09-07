@@ -21,7 +21,7 @@
     "generate:patch:release": "pnpx changelogen@latest --patch && git push --follow-tags",
     "bump:version": "pnpx changelogen@latest --bump",
     "package:beta": "pnpm build:cli && pnpm publish --tag beta",
-    "package": "pnpm build:package && pnpm publish --access=public"
+    "package": "pnpm build:cli && pnpm publish --access=public"
   },
   "bin": {
     "cli-starter": "./dist/index.mjs"
