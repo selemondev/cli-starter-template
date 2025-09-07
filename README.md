@@ -1,4 +1,4 @@
-### CLI Starter Template
+# CLI Starter Template
 
 <!-- automd:badges color="yellow" license name="cli-starter-template" codecov bundlephobia packagephobia -->
 
